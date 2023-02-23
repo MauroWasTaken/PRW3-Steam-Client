@@ -1,7 +1,33 @@
+import '/src/assets/style/home.css'
+import Card from "../components/card";
+import {useEffect, useState} from "react";
+
 export default function Home() {
+    const [games, setGames] = useState([])
+
+    useEffect(() => {
+        fetch('/src/models/test.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                setGames(data)
+            })
+
+
+    }, []);
+
+
     return (
-        <div>
-            <h1>Home</h1>
+        <div className={"container"}>
+            <div className={"title"}>
+                <h1>List of games</h1>
+            </div>
+            <div className={"games"}>
+                {games.length === 0 && <h2>Loading...</h2>}
+                {games.length > 0 && games.map((game: any) => (
+                    <Card key={game.id} game={game}/>
+                ))}
+            </div>
         </div>
     )
 }
