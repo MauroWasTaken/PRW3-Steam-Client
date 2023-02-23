@@ -1,0 +1,13 @@
+.nav_container{
+    height: 75px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nva_container > * {
+    display: flex;
+    align-items: center;
+}
+
