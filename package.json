@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "backend":"json-server --watch src/data/db.json --port 8493",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
