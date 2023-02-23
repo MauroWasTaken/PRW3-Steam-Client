@@ -6,7 +6,7 @@ export default function Home() {
     const [games, setGames] = useState([])
 
     useEffect(() => {
-        fetch('/src/models/test.json')
+        fetch('http://localhost:8493/games')
             .then(response => response.json())
             .then(data => {
                 console.log(data)
