@@ -1,6 +1,7 @@
 import '/src/assets/style/home.css'
 import Card from "../components/card";
 import {useEffect, useState} from "react";
+import Game from "../models/game";
 
 export default function Home() {
     const [games, setGames] = useState([])
@@ -24,7 +25,7 @@ export default function Home() {
             </div>
             <div className={"games"}>
                 {games.length === 0 && <h2>Loading...</h2>}
-                {games.length > 0 && games.map((game: any) => (
+                {games.length > 0 && games.map((game: Game) => (
                     <Card key={game.id} game={game}/>
                 ))}
             </div>
