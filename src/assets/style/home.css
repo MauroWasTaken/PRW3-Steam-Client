@@ -1,7 +1,7 @@
 .games {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     align-content: center;
     margin: 0;
