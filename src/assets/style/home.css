@@ -1,12 +1,27 @@
 .games {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     align-content: center;
-    margin: 0;
-    padding: 0 8vh;
+    width: 100%;
     list-style: none;
 }
+
+.content_container {
+    margin: 0;
+    padding: 0 8vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filters {
+    width: 60%;
+}
+
+
+
 
 
