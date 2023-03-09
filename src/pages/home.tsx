@@ -66,9 +66,9 @@ export default function Home() {
                         </div>
                     </form>
                 </div>
+                {games.length === 0 && !isLoading && <h2>No game to display.</h2>}
                 <div className={"games"}>
                     {isLoading && <h2>Loading...</h2>}
-                    {games.length === 0 && !isLoading && <h2>No game to display.</h2>}
                     {games.length > 0 && games.map((game: Game) => (
                         <Card key={game.id} game={game}/>
                     ))}
