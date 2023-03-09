@@ -41,7 +41,7 @@ export default function Home() {
                 setGames(gamesCopy);
                 return;
             }
-            setGames(games.filter((game: Game) => game.title.toLowerCase().includes(values.search.toLowerCase())));
+            setGames(gamesCopy.filter((game: Game) => game.title.toLowerCase().includes(values.search.toLowerCase())));
         }
     });
 
