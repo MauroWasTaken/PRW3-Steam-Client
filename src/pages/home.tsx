@@ -51,9 +51,9 @@ export default function Home() {
         }
         if (filter.category !== null) {
             gamesFiltered = gamesFiltered.filter((game: Game) => game.genresIds.includes(filter.category.id));
-            }
-        setGames(gamesFiltered);
         }
+        setGames(gamesFiltered);
+    }
 
     return (
         <div className={"container"}>
@@ -62,19 +62,16 @@ export default function Home() {
             </div>
             <div className={"content_container"}>
                 <div className={"filters"}>
-                    <form onSubmit={formik.handleSubmit}>
-                        <div className="p-inputgroup">
-                            <InputText
-                                id={"search"}
-                                name={"search"}
-                                value={formik.values.search}
-                                placeholder="Search..."
 
-                                onChange={(e) => formik.setFieldValue('search', e.target.value)}
-                            />
-                            <Button icon="pi pi-search" className="p-button-warning"/>
+
+                    <SearchComponent filter={filter} applyFilter={applyFilter}/>
+                    <div className={"row"}>
+                        <DropdownCategory filter={filter} applyFilter={applyFilter}/>
+                        <DropdownRatings filter={filter} applyFilter={applyFilter}/>
+                        <div className={"filter"}>
+                            {/* TODO: Create wishlist filter */}
                         </div>
-                    </form>
+                    </div>
                 </div>
                 {games.length === 0 && !isLoading && <h2>No game to display.</h2>}
                 <div className={"games"}>
