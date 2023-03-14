@@ -1,0 +1,70 @@
+.details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.title{
+    position: sticky;
+    top: 0;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+    margin: 0;
+    height: 0;
+}
+.title h1{
+    color: white;
+    text-shadow: 0 0 5px #000000;
+    font-size: 3rem;
+    line-height: 1.5;
+    margin: auto;
+}
+.details .medias{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    flex-grow: 1;
+}
+.details .reviews{
+    width: 50%;
+    minimum-width: 300px;
+    height: 50vh;
+    color: white;
+    flex-grow: 1;
+}
+.details .reviews h1{
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: auto;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+}
+.details .description{
+    width: 50%;
+    height: 50vh;
+    color: white;
+}
+.details .description p{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+}
+
+@media only screen and (max-width: 600px) {
+
+    .details .description{
+        width: 100%;
+        height: 40%;
+    }
+    .details .reviews{
+        width: 100%;
+        position: absolute;
+        top: 150%;
+        left: 0;
+        height: 40%;
+    }
+  }
+
+
