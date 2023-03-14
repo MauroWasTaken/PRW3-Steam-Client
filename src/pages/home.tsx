@@ -14,11 +14,22 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
 import {useFormik} from 'formik';
+import {Dropdown} from "primereact/dropdown";
+import DropdownCategory from "../components/dropdown/dropdownCategory";
+import DropdownRatings from "../components/dropdown/dropdownRatings";
+import SearchComponent from "../components/search";
 
 export default function Home() {
     const [games, setGames] = useState([])
     const [gamesCopy, setGamesCopy] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+
+    let filter = {
+        search: '',
+        category: null,
+        rating: null,
+        wishlist: false
+    }
 
     useEffect(() => {
         fetch('http://localhost:8493/games')
