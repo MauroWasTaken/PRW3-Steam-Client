@@ -1,5 +1,6 @@
-import '/src/assets/style/shared.css';
-import '/src/assets/style/navbar.css';
+import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 export default function Navbar() {
     return (

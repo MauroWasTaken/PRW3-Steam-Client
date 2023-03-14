@@ -1,0 +1,26 @@
+.rating{    
+    flex-grow: 0;
+    font-size: 30px;
+    min-width: 125px;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+}
+.rating .emptyStar{
+    background:  var(--empty-star-color);
+    width:25px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.rating .fullStar{
+    background:  var(--full-star-color);
+    width:25px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.rating .halfStar{
+    width:25px;
+    background: linear-gradient(to right,  var(--full-star-color) 50%, var(--empty-star-color) 51%);
+    background: -webkit-linear-gradient(left,  var(--full-star-color) 50%,  var(--empty-star-color) 51%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
