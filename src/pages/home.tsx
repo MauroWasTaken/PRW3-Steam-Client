@@ -43,18 +43,17 @@ export default function Home() {
 
     }, []);
 
-    const formik = useFormik({
-        initialValues: {
-            search: '',
-        },
-        onSubmit: values => {
-            if (values.search === '') {
-                setGames(gamesCopy);
-                return;
-            }
-            setGames(gamesCopy.filter((game: Game) => game.title.toLowerCase().includes(values.search.toLowerCase())));
+    function applyFilter(newFilter: any) {
+        filter = newFilter;
+        let gamesFiltered = gamesCopy;
+        if (filter.search !== '') {
+            gamesFiltered = gamesFiltered.filter((game: Game) => game.title.toLowerCase().includes(filter.search.toLowerCase()));
         }
-    });
+        if (filter.category !== null) {
+            gamesFiltered = gamesFiltered.filter((game: Game) => game.genresIds.includes(filter.category.id));
+            }
+        setGames(gamesFiltered);
+        }
 
     return (
         <div className={"container"}>
