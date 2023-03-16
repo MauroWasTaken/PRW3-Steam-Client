@@ -50,6 +50,7 @@ export default function Home() {
             gamesFiltered = gamesFiltered.filter((game: Game) => game.title.toLowerCase().includes(filter.search.toLowerCase()));
         }
         if (filter.category !== null) {
+            // @ts-ignore
             gamesFiltered = gamesFiltered.filter((game: Game) => game.genresIds.includes(filter.category.id));
         }
         setGames(gamesFiltered);
