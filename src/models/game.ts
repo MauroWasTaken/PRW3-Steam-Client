@@ -4,5 +4,5 @@ export default interface Game {
     description: string;
     medias: string;
     splash: string;
-    genresIds: [];
+    genresIds: number[];
 }
