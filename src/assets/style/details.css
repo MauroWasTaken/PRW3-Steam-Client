@@ -7,15 +7,12 @@
 }
 .details .title{
     position: sticky;
-    padding-left: var(--universal-padding);
-    padding-right: var(--universal-padding);
 }
 .details .title h1{
     color: white;
     text-shadow: 0 0 5px #000000;
     font-size: 3rem;
     line-height: 1.5;
-    margin: auto;
     text-decoration: none;
 }
 .details .medias{
@@ -39,6 +36,7 @@
     margin: auto;
     padding-left: var(--universal-padding);
     padding-right: var(--universal-padding);
+    padding-top: var(--universal-padding);
     text-decoration: underline;
     text-decoration-color: var(--secondary-color);
     text-decoration-thickness: 2px;
@@ -52,7 +50,7 @@
 }
 .scroolable{
     overflow-y: auto;
-    max-height: calc(100% - 3rem);
+    max-height: calc(100% - 3rem - 15px);
 }
 .scroolable::-webkit-scrollbar-track
 {
