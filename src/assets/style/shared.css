@@ -11,3 +11,24 @@
     --full-star-color: #ffffff;
     --empty-star-color: #777777;
 }
+body::-webkit-scrollbar-track
+{
+	background-color: var(--main-color);
+}
+
+body::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: var(--main-color);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: var(--secondary-color-dark);
+}
+@media only screen and (max-width: 600px) {
+    body::-webkit-scrollbar
+    {
+        width: 5px;
+    }
+}

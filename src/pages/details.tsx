@@ -22,59 +22,37 @@ export default function Details() {
         fetch('http://localhost:8493/reviews/?gameId=' + id)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 setReviews(data.length !== 0 ? data : [null])
             });
     }, []);
 
-    useEffect(() => {
-        let oldScroll = window.scrollY;
-        let screenRatio = window.innerWidth / window.innerHeight;
-        const handleScroll = (event:Event) => {
-            const medias = document.getElementById('medias');
-            const review = document.getElementById('review');
-            if (medias !== null && review !== null && screenRatio > 1) {
-                let scrollTo:HTMLElement;
-                if (window.scrollY < oldScroll) {
-                    scrollTo = medias;
-                } else {
-                    scrollTo = review;
-                }
-                oldScroll = window.scrollY;
-                //scrollTo.scrollIntoView(
-                //    { block: "start", inline: "nearest"}
-                //);
-            }
-          };
-      
-          window.addEventListener('scroll', handleScroll);
-      
-          return () => {
-            window.removeEventListener('scroll', handleScroll);
-          };
-        }, []);
-
-
     return (<>
-        <div className={"title"}>
-            <h1>{game === null ?
-                "Loading..." :
-                game.title}
-            </h1>
-        </div>            
+                  
         <div className={"details"}>
             {game !== null && <>
-                <img className={"medias"} src={game.splash} alt="" id="medias" />
+                <div className={"medias"} id="medias" style={{ backgroundImage: `url(${game.splash})` }}>
+                    <div className={"title"}>
+                        <h1>{game === null ?
+                            "Loading..." :
+                            game.title}
+                        </h1>
+                    </div>  
+                </div>
                 <div className={"description"}>
-                    <p>{game.description}</p>
+                    <h1 id="description">Description</h1>
+                    <div className={"scroolable"}>
+                        <p>{game.description}</p>
+                    </div>
                 </div>
                 <div className={"reviews"}>
                     <h1 id="review">Reviews</h1>
-                        {reviews.length === 0 && <h2>Loading...</h2>}
-                        {reviews[0] === null && <h2>No Reviews</h2>}
-                        { (reviews[0] !== null && reviews.length > 0) && reviews.map((review: any) => (
-                            <ReviewCard key={review} review={review}/>
-                        ))}
+                        <div className={"scroolable"}>
+                            {reviews.length === 0 && <h2>Loading...</h2>}
+                            {reviews[0] === null && <h2>No Reviews</h2>}
+                            { (reviews[0] !== null && reviews.length > 0) && reviews.map((review: any) => (
+                                <ReviewCard key={review} review={review}/>
+                            ))}
+                        </div>
                 </div>
                 </> 
             }
