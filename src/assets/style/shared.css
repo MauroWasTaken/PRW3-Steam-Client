@@ -1,0 +1,34 @@
+:root {
+    --main-color: #2d2d2d;
+    --main-color-light: #4d4d4d;
+    --main-color-dark: #1d1d1d;
+    --secondary-color: #EA9010;
+    --secondary-color-light: #FBAF3C;
+    --secondary-color-dark: #D97E00;
+    --text-color: #FFFFFF;
+    --main-border-radius: 10px;
+    --universal-padding: 15px;
+    --full-star-color: #ffffff;
+    --empty-star-color: #777777;
+}
+body::-webkit-scrollbar-track
+{
+	background-color: var(--main-color);
+}
+
+body::-webkit-scrollbar
+{
+	width: 15px;
+	background-color: var(--main-color);
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: var(--secondary-color-dark);
+}
+@media only screen and (max-width: 600px) {
+    body::-webkit-scrollbar
+    {
+        width: 5px;
+    }
+}

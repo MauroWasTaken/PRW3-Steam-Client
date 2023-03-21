@@ -345,6 +345,20 @@
       "userId": 1,
       "rating": 2,
       "comment": "This game is trash, I hate it"
+    },
+    {
+      "id": 6,
+      "gameId": 9,
+      "userId": 1,
+      "rating": 2,
+      "comment": "This game is trash, I hate it"
+    },
+    {
+      "id": 7,
+      "gameId": 9,
+      "userId": 2,
+      "rating": 0.5,
+      "comment": "IM GOING TO MURDER MY TEAM"
     }
   ]
 }
