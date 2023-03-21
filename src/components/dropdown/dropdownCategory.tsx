@@ -1,7 +1,7 @@
 import DropdownComponent from "./dropdown";
 import {useEffect, useState} from "react";
 
-export default function DropdownCategory({filter, applyFilter}: { filter: any, applyFilter: any}) {
+export default function DropdownCategory({updateCategoryFilter}: {updateCategoryFilter: any}) {
     const [categories, setCategories] = useState([])
     const [selectedCategory, setSelectedCategory] = useState(null)
 
@@ -15,8 +15,7 @@ export default function DropdownCategory({filter, applyFilter}: { filter: any, a
 
     function onChange(e: any) {
         setSelectedCategory(e.value)
-        filter.category = e.value;
-        applyFilter(filter);
+        updateCategoryFilter(e.value)
     }
 
     return (
