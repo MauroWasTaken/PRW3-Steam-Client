@@ -2,8 +2,7 @@ import '/src/assets/style/home.css'
 import Card from "../components/card";
 import {useEffect, useState} from "react";
 import Game from "../models/game";
-import {InputText} from "primereact/inputtext";
-import {Button} from "primereact/button";
+import {Filter} from "../models/filter"
 //theme
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
@@ -12,24 +11,23 @@ import "primereact/resources/primereact.min.css";
 
 //icons
 import "primeicons/primeicons.css";
-
-import {useFormik} from 'formik';
-import {Dropdown} from "primereact/dropdown";
 import DropdownCategory from "../components/dropdown/dropdownCategory";
 import DropdownRatings from "../components/dropdown/dropdownRatings";
 import SearchComponent from "../components/search";
+import Genre from "../models/genre";
 
 export default function Home() {
     const [games, setGames] = useState([])
     const [gamesCopy, setGamesCopy] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
-    let filter = {
+    const [reviews, setReviews] = useState([])
+    const [filter, setFilter] = useState<Filter>({
         search: '',
         category: null,
         rating: null,
         wishlist: false
-    }
+    })
+
 
     useEffect(() => {
         fetch('http://localhost:8493/games')
@@ -39,19 +37,63 @@ export default function Home() {
                 setGamesCopy(data)
                 setIsLoading(false)
             })
-
-
     }, []);
 
-    function applyFilter(newFilter: any) {
-        filter = newFilter;
+    useEffect(() => {
+        fetch('http://localhost:8493/reviews')
+            .then(response => response.json())
+            .then(data => {
+                setReviews(data)
+            })
+    }, []);
+
+    useEffect(() => {
+        applyFilter();
+    }, [filter])
+
+    function gameReviewsAverageRating(gameId: number) {
+        const gameReviews = reviews.filter((review: any) => review.gameId === gameId) as [];
+        let sum = 0;
+        gameReviews.forEach((review: any) => {
+            sum += review.rating;
+        });
+        return sum / gameReviews.length;
+    }
+
+    function updateSearchFilter(value: string) {
+        setFilter({
+            ...filter,
+            search: value
+        });
+    }
+
+    function updateCategoryFilter(value: Genre) {
+        setFilter({
+            ...filter,
+            category: value
+        });
+    }
+
+    function updateRatingsFilter(value: number) {
+        setFilter({
+            ...filter,
+            rating: value
+        });
+    }
+
+    function applyFilter() {
         let gamesFiltered = gamesCopy;
         if (filter.search !== '') {
             gamesFiltered = gamesFiltered.filter((game: Game) => game.title.toLowerCase().includes(filter.search.toLowerCase()));
         }
         if (filter.category !== null) {
-            // @ts-ignore
-            gamesFiltered = gamesFiltered.filter((game: Game) => game.genresIds.includes(filter.category.id));
+            gamesFiltered = gamesFiltered.filter((game: Game) => game.genresIds.includes(filter.category?.id as number));
+        }
+        if (filter.rating !== null) {
+            gamesFiltered = gamesFiltered.filter((game: Game) => {
+                let averageRating = gameReviewsAverageRating(game.id);
+                return averageRating > (filter.rating as number) && averageRating <= (filter.rating as number + 1);
+            });
         }
         setGames(gamesFiltered);
     }
@@ -63,12 +105,10 @@ export default function Home() {
             </div>
             <div className={"content_container"}>
                 <div className={"filters"}>
-
-
-                    <SearchComponent filter={filter} applyFilter={applyFilter}/>
+                    <SearchComponent updateSearchFilter={updateSearchFilter}/>
                     <div className={"row"}>
-                        <DropdownCategory filter={filter} applyFilter={applyFilter}/>
-                        <DropdownRatings filter={filter} applyFilter={applyFilter}/>
+                        <DropdownCategory updateCategoryFilter={updateCategoryFilter}/>
+                        <DropdownRatings updateRatingsFilter={updateRatingsFilter}/>
                         <div className={"filter"}>
                             {/* TODO: Create wishlist filter */}
                         </div>
