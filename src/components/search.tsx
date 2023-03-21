@@ -3,7 +3,7 @@ import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import Game from "../models/game";
 
-export default function SearchComponent({filter, applyFilter} : {filter: any, applyFilter: any}) {
+export default function SearchComponent({updateSearchFilter}: {updateSearchFilter: any }) {
 
     const formik = useFormik({
         initialValues: {
@@ -11,12 +11,10 @@ export default function SearchComponent({filter, applyFilter} : {filter: any, ap
         },
         onSubmit: values => {
             if (values.search === '') {
-                filter.search = '';
-                applyFilter(filter);
+                updateSearchFilter('');
                 return;
             }
-            filter.search = values.search;
-            applyFilter(filter);
+            updateSearchFilter(values.search);
         }
     });
 
