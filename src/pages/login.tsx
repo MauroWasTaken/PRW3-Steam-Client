@@ -4,13 +4,10 @@ import {Password} from "primereact/password";
 import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import {Toast, ToastMessage} from 'primereact/toast';
-import {InputMask} from "primereact/inputmask";
-import {useNavigate} from "react-router";
 
 
 export default function Login() {
     const toast = useRef<Toast>(null);
-    const navigate = useNavigate();
 
     const showMultipleErrors = (errors: any) => {
         // List of toast messages
@@ -64,7 +61,7 @@ export default function Login() {
                                 data.json().then((data) => {
                                     sessionStorage.setItem('user', JSON.stringify(data));
                                     toast.current?.show({severity: 'success', summary: 'Success', detail: 'Login successful'});
-                                    navigate('/');
+                                    window.location.href = '/'
                                 })
                             } else {
                                 toast.current?.show({severity: 'error', summary: 'Error', detail: 'Login failed'});
