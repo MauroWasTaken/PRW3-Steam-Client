@@ -5,17 +5,21 @@ import Layout from "./pages/layout";
 import Home from "./pages/home";
 import Details from "./pages/details"
 import NoPage from "./pages/nopage";
+import Login from "./pages/login";
 
 export default function App() {
+
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route path={"/"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path={"game"}>
-                        <Route path={":id"} element={<Details />}/>
+                        <Route path={":id"} element={<Details/>}/>
                     </Route>
-                    <Route path={"*"} element={<NoPage />}/>
+                    <Route path={"login"} element={<Login/>}/>
+                    <Route path={"*"} element={<NoPage/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
