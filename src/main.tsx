@@ -9,11 +9,6 @@ import Login from "./pages/login";
 import User from "./models/user";
 
 export default function App() {
-    const [token, setToken] = useState<User>();
-
-    if (!token) {
-        return <Login setToken={setToken}/>
-    }
 
     return (
         <BrowserRouter>
@@ -21,10 +16,10 @@ export default function App() {
                 <Route path={"/"} element={<Layout/>}>
                     <Route index element={<Home/>}/>
                     <Route path={"game"}>
-                        <Route path={":id"} element={<Details />}/>
+                        <Route path={":id"} element={<Details/>}/>
                     </Route>
-                    <Route path={"login"} element={<Login />}/>
-                    <Route path={"*"} element={<NoPage />}/>
+                    <Route path={"login"} element={<Login/>}/>
+                    <Route path={"*"} element={<NoPage/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
