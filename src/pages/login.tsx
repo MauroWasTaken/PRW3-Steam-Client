@@ -59,16 +59,20 @@ export default function Login() {
                             'Accept': 'application/json'
                         },
                         body: `email=${values.email}&password=${values.password}`
-                    }).then(response => {
-                        if (response?.status === 200) {
-                            toast.current?.show({severity: 'success', summary: 'Success', detail: 'Login successful'});
-                            navigate('/');
-                        } else {
-                            toast.current?.show({severity: 'error', summary: 'Error', detail: 'Login failed'});
-                            formik.setFieldValue('email', '');
-                            formik.setFieldValue('password', '');
+                    }).then(data => {
+                            if (data.status === 200) {
+                                data.json().then((data) => {
+                                    sessionStorage.setItem('user', JSON.stringify(data));
+                                    toast.current?.show({severity: 'success', summary: 'Success', detail: 'Login successful'});
+                                    navigate('/');
+                                })
+                            } else {
+                                toast.current?.show({severity: 'error', summary: 'Error', detail: 'Login failed'});
+                                formik.setFieldValue('password', '');
+                                formik.setFieldValue('email', '');
+                            }
                         }
-                    });
+                    )
                 }
 
             }
