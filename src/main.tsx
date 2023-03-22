@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./pages/layout";
@@ -6,9 +6,9 @@ import Home from "./pages/home";
 import Details from "./pages/details"
 import NoPage from "./pages/nopage";
 import Login from "./pages/login";
-import User from "./models/user";
 
 export default function App() {
+
 
     return (
         <BrowserRouter>
