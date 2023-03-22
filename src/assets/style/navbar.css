@@ -11,6 +11,11 @@
     display: flex;
     align-items: center;
 }
+
 .nav_title {
     text-decoration:none;
+}
+
+.nav_buttons .nav_button {
+    margin-left: 15px;
 }
