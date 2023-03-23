@@ -4,13 +4,10 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    padding: 0;
-    list-style: none;
     width: 388px;
     height: 219px;
     background-color: #2d2d2d;
-    border-radius: 10px;
-    margin: 10px 1.5%;
+    margin: 10px 6px;
     overflow-wrap: break-word;
     position: relative;
     overflow: hidden;
@@ -61,7 +58,7 @@
 
 .game .title h2 {
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 300;
     padding: 0;
     text-align: center;

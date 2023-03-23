@@ -15,6 +15,8 @@ import DropdownCategory from "../components/dropdown/dropdownCategory";
 import DropdownRatings from "../components/dropdown/dropdownRatings";
 import SearchComponent from "../components/search";
 import Genre from "../models/genre";
+import {Checkbox} from "primereact/checkbox";
+import WishlistFilter from "../components/wishlistFilter";
 
 export default function Home() {
     const [games, setGames] = useState([])
@@ -27,7 +29,6 @@ export default function Home() {
         rating: null,
         wishlist: false
     })
-
 
     useEffect(() => {
         fetch('http://localhost:8493/games')
@@ -81,6 +82,13 @@ export default function Home() {
         });
     }
 
+    function updateWishlistFilter(value: boolean) {
+        setFilter({
+            ...filter,
+            wishlist: value
+        });
+    }
+
     function applyFilter() {
         let gamesFiltered = gamesCopy;
         if (filter.search !== '') {
@@ -94,6 +102,10 @@ export default function Home() {
                 let averageRating = gameReviewsAverageRating(game.id);
                 return averageRating > (filter.rating as number) && averageRating <= (filter.rating as number + 1);
             });
+        }
+        if (filter.wishlist) {
+            const user = JSON.parse(sessionStorage.getItem('user') as string).user;
+            gamesFiltered = gamesFiltered.filter((game: Game) => user.wishlist.includes(game.id));
         }
         setGames(gamesFiltered);
     }
@@ -109,9 +121,7 @@ export default function Home() {
                     <div className={"row"}>
                         <DropdownCategory updateCategoryFilter={updateCategoryFilter}/>
                         <DropdownRatings updateRatingsFilter={updateRatingsFilter}/>
-                        <div className={"filter"}>
-                            {/* TODO: Create wishlist filter */}
-                        </div>
+                        <WishlistFilter updateWishlistFilter={updateWishlistFilter}/>
                     </div>
                 </div>
                 {games.length === 0 && !isLoading && <h2>No game to display.</h2>}
