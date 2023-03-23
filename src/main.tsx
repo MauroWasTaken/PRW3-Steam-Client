@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Details from "./pages/details"
 import NoPage from "./pages/nopage";
 import Login from "./pages/login";
+import Register from "./pages/register";
 
 export default function App() {
 
@@ -19,6 +20,7 @@ export default function App() {
                         <Route path={":id"} element={<Details/>}/>
                     </Route>
                     <Route path={"login"} element={<Login/>}/>
+                    <Route path={"register"} element={<Register/>}/>
                     <Route path={"*"} element={<NoPage/>}/>
                 </Route>
             </Routes>
