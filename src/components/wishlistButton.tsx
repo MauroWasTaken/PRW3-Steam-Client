@@ -20,6 +20,15 @@ export default function WishlistButton({game, small, medium}: { game: Game, smal
         }
     }
 
+    useEffect(() => {
+        const user = sessionStorage.getItem('user');
+        if (user !== null) {
+            setUser(JSON.parse(user).user);
+        } else {
+            setUser(null);
+        }
+    }, []);
+
     function changeWishlistStat(id: number) {
         const user = sessionStorage.getItem('user');
         if (user !== null) {
