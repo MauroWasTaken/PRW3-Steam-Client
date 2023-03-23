@@ -4,7 +4,9 @@ import {Password} from "primereact/password";
 import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import {Toast, ToastMessage} from 'primereact/toast';
+import UserApi from "../services/user_api";
 
+const userApi = new UserApi();
 
 export default function Login() {
     const toast = useRef<Toast>(null);
@@ -48,29 +50,19 @@ export default function Login() {
                     return errors;
                 },
                 onSubmit: values => {
-
-                    fetch('http://localhost:8493/login', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                            'Accept': 'application/json'
-                        },
-                        body: `email=${values.email}&password=${values.password}`
-                    }).then(data => {
-                            if (data.status === 200) {
-                                data.json().then((data) => {
-                                    sessionStorage.setItem('user', JSON.stringify(data));
-                                    window.location.href = '/'
-                                })
-                            } else {
-                                toast.current?.show({severity: 'error', summary: 'Error', detail: 'Login failed'});
-                                formik.setFieldValue('password', '');
-                                formik.setFieldValue('email', '');
-                            }
+                    userApi.loginUser(values.email, values.password).then((data) => {
+                        if (data.status === 200) {
+                            data.json().then((data) => {
+                                sessionStorage.setItem('user', JSON.stringify(data));
+                                window.location.href = '/'
+                            })
+                        } else {
+                            toast.current?.show({severity: 'error', summary: 'Error', detail: 'Login failed'});
+                            formik.setFieldValue('password', '');
+                            formik.setFieldValue('email', '');
                         }
-                    )
+                    });
                 }
-
             }
         )
     ;

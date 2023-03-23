@@ -17,7 +17,11 @@ import SearchComponent from "../components/search";
 import Genre from "../models/genre";
 import {Checkbox} from "primereact/checkbox";
 import WishlistFilter from "../components/wishlistFilter";
+import GameApi from "../services/game_api";
+import ReviewApi from "../services/review_api";
 
+const gameApi = new GameApi();
+const reviewApi = new ReviewApi();
 export default function Home() {
     const [games, setGames] = useState([])
     const [gamesCopy, setGamesCopy] = useState([])
@@ -31,21 +35,17 @@ export default function Home() {
     })
 
     useEffect(() => {
-        fetch('http://localhost:8493/games')
-            .then(response => response.json())
-            .then(data => {
-                setGames(data)
-                setGamesCopy(data)
-                setIsLoading(false)
-            })
+        gameApi.getGames().then(response => response.json()).then(data => {
+            setGames(data)
+            setGamesCopy(data)
+            setIsLoading(false)
+        })
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:8493/reviews')
-            .then(response => response.json())
-            .then(data => {
-                setReviews(data)
-            })
+        reviewApi.getReviews().then(response => response.json()).then(data => {
+            setReviews(data)
+        });
     }, []);
 
     useEffect(() => {
