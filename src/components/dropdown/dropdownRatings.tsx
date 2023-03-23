@@ -1,7 +1,7 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import DropdownComponent from "./dropdown";
 
-export default function DropdownRatings({updateRatingsFilter}: { updateRatingsFilter: any }) {
+export default function DropdownRatings({content, updateRatingsFilter}: { content: number | null, updateRatingsFilter: any }) {
     const [selectedRating, setSelectedRating] = useState(null)
     const ratings = [
         {id: 0, name: "★☆☆☆☆"},
@@ -15,6 +15,12 @@ export default function DropdownRatings({updateRatingsFilter}: { updateRatingsFi
         setSelectedRating(e.value);
         updateRatingsFilter(e.value.id);
     }
+
+    useEffect(() => {
+        if (content === null) {
+            setSelectedRating(null)
+        }
+    }, [content]);
 
     return (
         <>

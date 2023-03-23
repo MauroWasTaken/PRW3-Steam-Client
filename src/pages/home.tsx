@@ -127,14 +127,16 @@ export default function Home() {
             <div className={"content_container"}>
                 <div className={"filters"}>
                     <div className={"row"}>
-                        <SearchComponent updateSearchFilter={updateSearchFilter}/>
-                        <Button icon="pi pi-filter-slash" severity="warning" aria-label="Notification"/>
+                        <SearchComponent content={filter.search} updateSearchFilter={updateSearchFilter}/>
+                        <Button icon="pi pi-filter-slash" severity="warning" aria-label="Notification" onClick={() =>
+                            removeFilter()
+                        }/>
                     </div>
 
                     <div className={"row"}>
-                        <DropdownCategory updateCategoryFilter={updateCategoryFilter}/>
-                        <DropdownRatings updateRatingsFilter={updateRatingsFilter}/>
-                        <WishlistFilter updateWishlistFilter={updateWishlistFilter}/>
+                        <DropdownCategory content={filter.category} updateCategoryFilter={updateCategoryFilter}/>
+                        <DropdownRatings content={filter.rating} updateRatingsFilter={updateRatingsFilter}/>
+                        <WishlistFilter content={filter.wishlist} updateWishlistFilter={updateWishlistFilter}/>
                     </div>
                 </div>
                 {games.length === 0 && !isLoading && <h2 style={{color: "white"}}>No game to display.</h2>}

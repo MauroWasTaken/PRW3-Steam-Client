@@ -1,15 +1,21 @@
 import {Dropdown} from "primereact/dropdown";
 import '/src/assets/style/dropdown.css'
 import {Checkbox} from "primereact/checkbox";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
-export default function WishlistFilter({updateWishlistFilter}: { updateWishlistFilter: any }) {
+export default function WishlistFilter({content, updateWishlistFilter}: { content: boolean, updateWishlistFilter: any }) {
     const [checked, setChecked] = useState(false);
 
     function onChange(e: any) {
         setChecked(e.checked);
         updateWishlistFilter(e.checked);
     }
+
+    useEffect(() => {
+        if (!content) {
+            setChecked(false)
+        }
+    }, [content]);
 
     return (
         <div className={"filter"}>
