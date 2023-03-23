@@ -4,8 +4,9 @@ import {Password} from "primereact/password";
 import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import {Toast, ToastMessage} from 'primereact/toast';
+import UserApi from "../services/user_api";
 
-
+const userApi = new UserApi();
 export default function Login() {
     const toast = useRef<Toast>(null);
 
@@ -48,9 +49,9 @@ export default function Login() {
                     } else if (values.password.length > 20) {
                         errors.password = 'Must be 20 characters or less';
                     }
-                    if(!values.confirmPassword){
+                    if (!values.confirmPassword) {
                         errors.confirmPassword = 'Confirm password is required';
-                    } else if(values.confirmPassword !== values.password){
+                    } else if (values.confirmPassword !== values.password) {
                         errors.confirmPassword = 'Passwords do not match';
                     }
                     if (Object.keys(errors).length > 0) {
@@ -66,30 +67,22 @@ export default function Login() {
                         wishlist: [],
                         library: []
                     }
-                    fetch('http://localhost:8493/register', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify(user)
-                    }).then(data => {
-                            if (data.status === 200 || data.status === 201) {
-                                data.json().then((data) => {
-                                    sessionStorage.setItem('user', JSON.stringify(data));
-                                    window.location.href = '/'
-                                })
-                            } else {
-                                toast.current?.show({severity: 'error', summary: 'Error', detail: 'Register failed'});
-                                formik.setFieldValue('password', '');
-                                formik.setFieldValue('email', '');
-                                formik.setFieldValue('username', '');
-                                formik.setFieldValue('confirmPassword', '');
-                            }
-                        }
-                    )
-                }
 
+                    userApi.registerUser(user).then(data => {
+                        if (data.status === 200 || data.status === 201) {
+                            data.json().then((data) => {
+                                sessionStorage.setItem('user', JSON.stringify(data));
+                                window.location.href = '/'
+                            })
+                        } else {
+                            toast.current?.show({severity: 'error', summary: 'Error', detail: 'Register failed'});
+                            formik.setFieldValue('password', '');
+                            formik.setFieldValue('email', '');
+                            formik.setFieldValue('username', '');
+                            formik.setFieldValue('confirmPassword', '');
+                        }
+                    });
+                },
             }
         )
     ;
