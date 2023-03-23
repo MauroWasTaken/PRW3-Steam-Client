@@ -1,9 +1,11 @@
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Toast} from "primereact/toast";
 import Game from "../models/game";
 import User from "../models/user";
 import '/src/assets/style/wishlist.css'
+import UserApi from "../services/user_api";
 
+const userApi = new UserApi();
 export default function WishlistButton({game, small, medium}: { game: Game, small?: boolean, medium?: boolean }) {
     const toast = useRef<Toast>(null);
     const [user, setUser] = useState<User | null>();
@@ -43,9 +45,18 @@ export default function WishlistButton({game, small, medium}: { game: Game, smal
                 wishlist.push(id);
             }
             userObj.user.wishlist = wishlist;
-            sessionStorage.setItem('user', JSON.stringify(userObj));
-            setUser(userObj.user);
-            toast.current?.show({severity: 'success', summary: 'Success', detail: 'Wishlist updated', life: 3000});
+            userApi.updateUserWishlist(userObj.user).then(() => {
+                toast.current?.show({severity: 'success', summary: 'Success', detail: 'Wishlist updated', life: 3000});
+                sessionStorage.setItem('user', JSON.stringify(userObj));
+                setUser(userObj.user);
+            }).catch(() => {
+                toast.current?.show({
+                    severity: 'error',
+                    summary: 'Error',
+                    detail: 'Wishlist update failed',
+                    life: 3000
+                });
+            });
         } else {
             toast.current?.show({
                 severity: 'error',
@@ -76,5 +87,4 @@ export default function WishlistButton({game, small, medium}: { game: Game, smal
             </a>
         </>
     )
-
 }
