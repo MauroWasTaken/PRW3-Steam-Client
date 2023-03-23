@@ -263,51 +263,17 @@
   ],
   "users": [
     {
-      "id": 1,
-      "username": "John Doe",
-      "email": "johndoe@test.com",
-      "password": "$2a$10$gA97/fiSu4drARKPENR2WO6KOeZlCeRYgHzK5xSVd7mSLwbUBJYUu",
-      "library": [
-        5,
-        3,
-        10
-      ],
-      "wishlist": [
-        1,
-        2
-      ]
-    },
-    {
-      "id": 2,
-      "username": "MauroWasTaken",
-      "email": "maurx18@gmail.com",
-      "password": "$2a$10$gA97/fiSu4drARKPENR2WO6KOeZlCeRYgHzK5xSVd7mSLwbUBJYUu",
-      "library": [
-        7,
-        9,
-        10
-      ],
+      "email": "mathieu.rabot@gaea21.org",
+      "password": "$2a$10$VbRSFPeV.C0TxZrUcdx5W.w7hNHX8c8XMzN46ID5RnegZ4AeUPjky",
+      "username": "Nomeos",
       "wishlist": [
         1,
         2,
-        3
-      ]
-    },
-    {
-      "id": 2,
-      "username": "NomNom",
-      "email": "nomnom@email.com",
-      "password": "$2a$10$gA97/fiSu4drARKPENR2WO6KOeZlCeRYgHzK5xSVd7mSLwbUBJYUu",
-      "library": [
-        7,
         9,
-        10
+        5
       ],
-      "wishlist": [
-        1,
-        2,
-        3
-      ]
+      "library": [],
+      "id": 1
     }
   ],
   "reviews": [
