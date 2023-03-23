@@ -1,9 +1,9 @@
 import {InputText} from "primereact/inputtext";
 import {Button} from "primereact/button";
 import {useFormik} from "formik";
-import Game from "../models/game";
+import {useEffect} from "react";
 
-export default function SearchComponent({updateSearchFilter}: {updateSearchFilter: any }) {
+export default function SearchComponent({content, updateSearchFilter}: { content: string | null, updateSearchFilter: any }) {
 
     const formik = useFormik({
         initialValues: {
@@ -18,9 +18,15 @@ export default function SearchComponent({updateSearchFilter}: {updateSearchFilte
         }
     });
 
+    useEffect(() => {
+        if (content === '') {
+            formik.setFieldValue('search', '');
+        }
+    }, [content])
+
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <div className="p-inputgroup">
+        <form onSubmit={formik.handleSubmit} style={{width: "100%", paddingRight: "var(--universal-padding)"}}>
+            <div className="p-inputgroup" style={{width: "100%"}}>
                 <InputText
                     id={"search"}
                     name={"search"}

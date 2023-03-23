@@ -18,6 +18,7 @@ import Genre from "../models/genre";
 import WishlistFilter from "../components/wishlistFilter";
 import GameApi from "../services/game_api";
 import ReviewApi from "../services/review_api";
+import {Button} from "primereact/button";
 
 const gameApi = new GameApi();
 const reviewApi = new ReviewApi();
@@ -109,6 +110,15 @@ export default function Home() {
         setGames(gamesFiltered);
     }
 
+    function removeFilter() {
+        setFilter({
+            search: '',
+            category: null,
+            rating: null,
+            wishlist: false
+        });
+    }
+
     return (
         <div className={"container"}>
             <div className={"title"}>
@@ -116,11 +126,17 @@ export default function Home() {
             </div>
             <div className={"content_container"}>
                 <div className={"filters"}>
-                    <SearchComponent updateSearchFilter={updateSearchFilter}/>
                     <div className={"row"}>
-                        <DropdownCategory updateCategoryFilter={updateCategoryFilter}/>
-                        <DropdownRatings updateRatingsFilter={updateRatingsFilter}/>
-                        <WishlistFilter updateWishlistFilter={updateWishlistFilter}/>
+                        <SearchComponent content={filter.search} updateSearchFilter={updateSearchFilter}/>
+                        <Button icon="pi pi-filter-slash" severity="warning" aria-label="Notification" onClick={() =>
+                            removeFilter()
+                        }/>
+                    </div>
+
+                    <div className={"row"}>
+                        <DropdownCategory content={filter.category} updateCategoryFilter={updateCategoryFilter}/>
+                        <DropdownRatings content={filter.rating} updateRatingsFilter={updateRatingsFilter}/>
+                        <WishlistFilter content={filter.wishlist} updateWishlistFilter={updateWishlistFilter}/>
                     </div>
                 </div>
                 {games.length === 0 && !isLoading && <h2 style={{color: "white"}}>No game to display.</h2>}

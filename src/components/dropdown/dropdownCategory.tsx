@@ -1,9 +1,10 @@
 import DropdownComponent from "./dropdown";
 import {useEffect, useState} from "react";
 import GenreApi from "../../services/genre_api";
+import Genre from "../../models/genre";
 
 const genreApi = new GenreApi();
-export default function DropdownCategory({updateCategoryFilter}: { updateCategoryFilter: any }) {
+export default function DropdownCategory({content, updateCategoryFilter}: { content: Genre | null, updateCategoryFilter: any }) {
     const [categories, setCategories] = useState([])
     const [selectedCategory, setSelectedCategory] = useState(null)
 
@@ -12,6 +13,12 @@ export default function DropdownCategory({updateCategoryFilter}: { updateCategor
             setCategories(data)
         });
     }, []);
+
+    useEffect(() => {
+        if (content === null) {
+            setSelectedCategory(null)
+        }
+    }, [content])
 
     function onChange(e: any) {
         setSelectedCategory(e.value)
