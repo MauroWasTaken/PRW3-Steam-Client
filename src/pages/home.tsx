@@ -15,7 +15,6 @@ import DropdownCategory from "../components/dropdown/dropdownCategory";
 import DropdownRatings from "../components/dropdown/dropdownRatings";
 import SearchComponent from "../components/search";
 import Genre from "../models/genre";
-import {Checkbox} from "primereact/checkbox";
 import WishlistFilter from "../components/wishlistFilter";
 import GameApi from "../services/game_api";
 import ReviewApi from "../services/review_api";
@@ -124,11 +123,11 @@ export default function Home() {
                         <WishlistFilter updateWishlistFilter={updateWishlistFilter}/>
                     </div>
                 </div>
-                {games.length === 0 && !isLoading && <h2>No game to display.</h2>}
+                {games.length === 0 && !isLoading && <h2 style={{color: "white"}}>No game to display.</h2>}
                 <div className={"games"}>
                     {isLoading && <h2>Loading...</h2>}
                     {games.length > 0 && games.map((game: Game) => (
-                        <Card key={game.id} game={game}/>
+                        <Card key={game.id} game={game} applyFilter={applyFilter}/>
                     ))}
                 </div>
             </div>

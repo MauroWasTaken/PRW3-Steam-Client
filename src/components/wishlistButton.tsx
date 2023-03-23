@@ -6,7 +6,7 @@ import '/src/assets/style/wishlist.css'
 import UserApi from "../services/user_api";
 
 const userApi = new UserApi();
-export default function WishlistButton({game, small, medium}: { game: Game, small?: boolean, medium?: boolean }) {
+export default function WishlistButton({game, small, medium, applyFilter}: { game: Game, small?: boolean, medium?: boolean, applyFilter: any }) {
     const toast = useRef<Toast>(null);
     const [user, setUser] = useState<User | null>();
     const size = {
@@ -49,6 +49,7 @@ export default function WishlistButton({game, small, medium}: { game: Game, smal
                 toast.current?.show({severity: 'success', summary: 'Success', detail: 'Wishlist updated', life: 3000});
                 sessionStorage.setItem('user', JSON.stringify(userObj));
                 setUser(userObj.user);
+                applyFilter();
             }).catch(() => {
                 toast.current?.show({
                     severity: 'error',

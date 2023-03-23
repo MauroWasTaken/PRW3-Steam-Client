@@ -2,7 +2,7 @@ import '/src/assets/style/card.css'
 import Game from "../models/game";
 import WishlistButton from "./wishlistButton";
 
-export default function Card({game}: { game: Game }) {
+export default function Card({game, applyFilter}: { game: Game, applyFilter: any }) {
     return (
         <div className={"game"}>
             <a className={"overlay"} href={"/game/" + game.id}> </a>
@@ -10,7 +10,7 @@ export default function Card({game}: { game: Game }) {
             <div className={"title"}>
                 <h2>{game.title}</h2>
             </div>
-            <WishlistButton game={game} small/>
+            <WishlistButton game={game} applyFilter={applyFilter} small/>
         </div>
     )
 }
