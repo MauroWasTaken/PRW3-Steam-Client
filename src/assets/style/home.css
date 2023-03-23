@@ -7,10 +7,12 @@
     width: 100%;
     list-style: none;
 }
+.container {
+    padding: 0 8%;
+}
 
 .content_container {
     margin: 0;
-    padding: 0 8%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -26,4 +28,11 @@
 .filters .row {
     display: flex;
     flex-direction: row;
+}
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: var(--full-star-color);
 }
