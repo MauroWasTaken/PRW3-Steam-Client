@@ -60,7 +60,6 @@ export default function Login() {
                             if (data.status === 200) {
                                 data.json().then((data) => {
                                     sessionStorage.setItem('user', JSON.stringify(data));
-                                    toast.current?.show({severity: 'success', summary: 'Success', detail: 'Login successful'});
                                     window.location.href = '/'
                                 })
                             } else {
