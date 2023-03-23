@@ -19,8 +19,8 @@ export default function SearchComponent({updateSearchFilter}: {updateSearchFilte
     });
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <div className="p-inputgroup">
+        <form onSubmit={formik.handleSubmit} style={{width: "100%", paddingRight: "var(--universal-padding)"}}>
+            <div className="p-inputgroup" style={{width: "100%"}}>
                 <InputText
                     id={"search"}
                     name={"search"}
