@@ -24,6 +24,7 @@ export default function Details() {
             .then(data => {
                 setReviews(data.length !== 0 ? data : [null])
             });
+            
     }, []);
 
     return (<>
@@ -37,7 +38,7 @@ export default function Details() {
                             game.title}
                         </h1>
                     </div>  
-                </div>
+                   </div>
                 <div className={"description"}>
                     <h1 id="description">Description</h1>
                     <div className={"scroolable"}>

@@ -11,7 +11,7 @@ export default function Navbar() {
     useEffect(() => {
         const user = sessionStorage.getItem('user');
         if (user !== null) {
-            setUser(JSON.parse(user));
+            setUser(JSON.parse(user).user);
         } else {
             setUser(null);
         }
@@ -41,7 +41,9 @@ export default function Navbar() {
                 {user !== null &&
                     <>
                         <Button icon="pi pi-user" className={"nav_button"} severity="warning" rounded
-                                aria-label="User"/>
+                                aria-label="User" onClick={() => {
+                                    window.location.href = '/profile'
+                                }}/>
                         <Button className={"nav_button"} severity={'warning'} label={"Logout"} icon={"pi pi-sign-out"}
                                 iconPos={"right"} onClick={() => {
                             sessionStorage.removeItem('user');

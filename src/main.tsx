@@ -7,6 +7,7 @@ import Details from "./pages/details"
 import NoPage from "./pages/nopage";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import UserProfile from './pages/userprofile';
 
 export default function App() {
 
@@ -21,6 +22,7 @@ export default function App() {
                     </Route>
                     <Route path={"login"} element={<Login/>}/>
                     <Route path={"register"} element={<Register/>}/>
+                    <Route path={"profile"} element={<UserProfile/>}/>
                     <Route path={"*"} element={<NoPage/>}/>
                 </Route>
             </Routes>
