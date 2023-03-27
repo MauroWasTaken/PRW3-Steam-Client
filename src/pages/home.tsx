@@ -133,9 +133,11 @@ export default function Home() {
                         }/>
                     </div>
 
-                    <div className={"row"}>
-                        <DropdownCategory content={filter.category} updateCategoryFilter={updateCategoryFilter}/>
-                        <DropdownRatings content={filter.rating} updateRatingsFilter={updateRatingsFilter}/>
+                    <div className={"row flex-wrap"}>
+                        <div>
+                            <DropdownCategory content={filter.category} updateCategoryFilter={updateCategoryFilter}/>
+                            <DropdownRatings content={filter.rating} updateRatingsFilter={updateRatingsFilter}/>
+                        </div>
                         <WishlistFilter content={filter.wishlist} updateWishlistFilter={updateWishlistFilter}/>
                     </div>
                 </div>
