@@ -4,6 +4,7 @@ import '/src/assets/style/details.css';
 import ReviewCard from "../components/reviewcard";
 import PurchaseButton from '../components/BuyButton';
 import WishlistButton from '../components/wishlistButton';
+import GameApi from '../services/game_api';
 
 
 export default function Details() {
@@ -11,9 +12,10 @@ export default function Details() {
     const [game, setGame] = useState<any>(null)
     const [reviews, setReviews] = useState<Array<any>>([])
     const navigate = useNavigate();
+    const gameApi = new GameApi();
 
     useEffect(() => {
-        fetch('http://localhost:8493/games/' + id)
+            gameApi.getGame(""+id)
             .then(response => response.json())
             .then(data => {
                 if (data === undefined) {        	
@@ -21,7 +23,7 @@ export default function Details() {
                 }
                 setGame(data !== undefined  ? data : null)
             });
-        fetch('http://localhost:8493/reviews/?gameId=' + id)
+            gameApi.getGameReviews(""+id)
             .then(response => response.json())
             .then(data => {
                 setReviews(data.length !== 0 ? data : [null])
