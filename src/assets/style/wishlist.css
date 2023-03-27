@@ -1,3 +1,7 @@
+.games .wishlist{
+    opacity: 0;
+}
+
 .wishlist {
     position: absolute;
     bottom: 0;
@@ -12,7 +16,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
     margin: 10px;
     z-index: 2;
 }

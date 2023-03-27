@@ -1,48 +1,37 @@
-.title{
+.profile .title{
     font-size: 1.5rem;
     color: var(--full-star-color);
     padding: var(--universal-padding) var(--universal-padding) 0 var(--universal-padding);
     margin-bottom: 1rem;
 }
-.scroolable{
+.profile .scrollable {
     overflow-y: auto;
     max-height: calc(100% - 3rem - 15px);
 }
-.scroolable::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: var(--main-color);
+.userGames .wishlist{
+    display: none;
 }
 
-.scroolable::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: var(--main-color);
-}
-
-.scroolable::-webkit-scrollbar-thumb
-{
-	background-color: var(--secondary-color);
-}
-.scroolable{
+.profile .scrollable {
     overflow-y: auto;
     max-height: 50vh;
 }
-.wishlist{
-    display: none;
-}
-.reviewer{
+.profile .reviewer{
     color: var(--full-star-color);
 }
-.review p{
+.profile .review p{
     
     color: var(--full-star-color);
 }
-.games{
+.profile .games{
     justify-content: left;
     padding: 0 var(--universal-padding) 0 var(--universal-padding);
     
 }
+.scrollable h2{
+    padding: 0 var(--universal-padding) 0 var(--universal-padding);
+}
+
 
 @media only screen and (max-width: 600px) {
     .games{

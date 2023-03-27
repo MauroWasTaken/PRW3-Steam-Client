@@ -48,23 +48,23 @@
     border-radius: var(--universal-border-radius);
     border-radius: 10px;
 }
-.scroolable{
+.scrollable {
     overflow-y: auto;
     max-height: calc(100% - 3rem - 15px);
 }
-.scroolable::-webkit-scrollbar-track
+.scrollable::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	background-color: var(--main-color);
 }
 
-.scroolable::-webkit-scrollbar
+.scrollable::-webkit-scrollbar
 {
 	width: 6px;
 	background-color: var(--main-color);
 }
 
-.scroolable::-webkit-scrollbar-thumb
+.scrollable::-webkit-scrollbar-thumb
 {
 	background-color: var(--secondary-color);
 }
@@ -73,6 +73,9 @@
     line-height: 1.5;
     padding-left: var(--universal-padding);
     padding-right: var(--universal-padding);
+}
+.buttons{
+    z-index: 10;
 }
 
 @media only screen and (max-width: 600px) {

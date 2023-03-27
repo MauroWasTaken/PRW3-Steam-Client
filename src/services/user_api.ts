@@ -30,4 +30,14 @@ export default class UserApi {
             body: JSON.stringify(user),
         })
     }
+
+    public async updateUserLibrary(user: any) {
+        return fetch(import.meta.env.VITE_BACKEND_URL + "users/" + user.id, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        })
+    }
 }

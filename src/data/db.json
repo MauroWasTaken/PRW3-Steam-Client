@@ -279,11 +279,17 @@
       "email": "mauro@mail.com",
       "password": "$2a$10$KcgDhFUbyd3yavE2TxtON.0aEDlPGn3fHhDHmaB7dooei8RRTktyK",
       "username": "Mauro",
-      "wishlist": [],
+      "wishlist": [
+        2,
+        1
+      ],
       "library": [
         1,
         2,
-        3
+        3,
+        7,
+        8,
+        4
       ],
       "id": 2
     }

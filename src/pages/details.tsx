@@ -2,6 +2,8 @@ import { useParams, useNavigate } from 'react-router';
 import {useEffect, useState} from "react";
 import '/src/assets/style/details.css';
 import ReviewCard from "../components/reviewcard";
+import PurchaseButton from '../components/BuyButton';
+import WishlistButton from '../components/wishlistButton';
 
 
 export default function Details() {
@@ -37,17 +39,21 @@ export default function Details() {
                             "Loading..." :
                             game.title}
                         </h1>
-                    </div>  
+                    </div> 
+                    <div className={"buttons"}>
+                        <WishlistButton game={game} applyFilter={()=>{}} medium/>
+                        <PurchaseButton game={game}/>
+                    </div> 
                    </div>
                 <div className={"description"}>
                     <h1 id="description">Description</h1>
-                    <div className={"scroolable"}>
+                    <div className={"scrollable"}>
                         <p>{game.description}</p>
                     </div>
                 </div>
                 <div className={"reviews"}>
                     <h1 id="review">Reviews</h1>
-                        <div className={"scroolable"}>
+                        <div className={"scrollable"}>
                             {reviews.length === 0 && <h2>Loading...</h2>}
                             {reviews[0] === null && <h2>No Reviews</h2>}
                             { (reviews[0] !== null && reviews.length > 0) && reviews.map((review: any) => (
