@@ -1,4 +1,4 @@
-.purchease {
+.purchase {
     position: absolute;
     bottom: 0;
     right: 90px;
@@ -18,15 +18,15 @@
     font-size: 1em;
 }
 
-.purchease i {
+.purchase i {
     color: var(--secondary-color);
     transition: all 0.5s ease;
 }
 
-.purchease:hover i {
+.purchase:hover i {
     color: var(--main-color);
 }
 
-.purchease:hover {
+.purchase:hover {
     background-color: var(--secondary-color);
 }
