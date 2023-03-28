@@ -5,6 +5,7 @@ import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import {Toast, ToastMessage} from 'primereact/toast';
 import UserApi from "../services/user_api";
+import "./../assets/style/authentication.css"
 
 const userApi = new UserApi();
 
@@ -70,13 +71,20 @@ export default function Login() {
     return (
         <>
             <Toast ref={toast}/>
-            <form onSubmit={formik.handleSubmit}>
-                <InputText id="email" name="email" type="email" placeholder="Email"
-                           value={formik.values.email} onChange={(e) => formik.setFieldValue('email', e.target.value)}/>
-                <Password id={'password'} name={'password'} placeholder={'Password'} value={formik.values.password}
-                          onChange={(e) => formik.setFieldValue('password', e.target.value)} feedback={false}/>
-                <Button label="Submit" type="submit"/>
-            </form>
+            <div className={"container"}>
+                <div className={"form-container"}>
+                    <form onSubmit={formik.handleSubmit} className={"form-content"}>
+                        <InputText id="email" name="email" type="email" placeholder="Email"
+                                   value={formik.values.email}
+                                   onChange={(e) => formik.setFieldValue('email', e.target.value)}/>
+                        <Password id={'password'} name={'password'} placeholder={'Password'}
+                                  value={formik.values.password}
+                                  onChange={(e) => formik.setFieldValue('password', e.target.value)} feedback={false}/>
+                        <Button label="Submit" type="submit" severity={"warning"}/>
+                    </form>
+                    <a href={"/register"}>Pas encore de compte ?</a>
+                </div>
+            </div>
         </>
     )
 }

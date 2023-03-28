@@ -5,6 +5,7 @@ import {Button} from "primereact/button";
 import {useFormik} from "formik";
 import {Toast, ToastMessage} from 'primereact/toast';
 import UserApi from "../services/user_api";
+import "./../assets/style/authentication.css"
 
 const userApi = new UserApi();
 export default function Login() {
@@ -90,19 +91,27 @@ export default function Login() {
     return (
         <>
             <Toast ref={toast}/>
-            <form onSubmit={formik.handleSubmit}>
-                <InputText id="username" name="username" type="text" placeholder="Username"
-                           value={formik.values.username}
-                           onChange={(e) => formik.setFieldValue('username', e.target.value)}/>
-                <InputText id="email" name="email" type="email" placeholder="Email"
-                           value={formik.values.email} onChange={(e) => formik.setFieldValue('email', e.target.value)}/>
-                <Password id={'password'} name={'password'} placeholder={'Password'} value={formik.values.password}
-                          onChange={(e) => formik.setFieldValue('password', e.target.value)}/>
-                <Password id={'confirmPassword'} name={'confirmPassword'} placeholder={'Confirm Password'}
-                          value={formik.values.confirmPassword}
-                          onChange={(e) => formik.setFieldValue('confirmPassword', e.target.value)} feedback={false}/>
-                <Button label="Submit" type="submit"/>
-            </form>
+            <div className={"container"}>
+                <div className={"form-container"}>
+                    <form onSubmit={formik.handleSubmit} className={"form-content"}>
+                        <InputText id="username" name="username" type="text" placeholder="Username"
+                                   value={formik.values.username}
+                                   onChange={(e) => formik.setFieldValue('username', e.target.value)}/>
+                        <InputText id="email" name="email" type="email" placeholder="Email"
+                                   value={formik.values.email}
+                                   onChange={(e) => formik.setFieldValue('email', e.target.value)}/>
+                        <Password id={'password'} name={'password'} placeholder={'Password'}
+                                  value={formik.values.password}
+                                  onChange={(e) => formik.setFieldValue('password', e.target.value)}/>
+                        <Password id={'confirmPassword'} name={'confirmPassword'} placeholder={'Confirm Password'}
+                                  value={formik.values.confirmPassword}
+                                  onChange={(e) => formik.setFieldValue('confirmPassword', e.target.value)}
+                                  feedback={false}/>
+                        <Button label="Submit" type="submit" severity={"warning"}/>
+                        <a href={"/login"}>Déjà enregistrer ?</a>
+                    </form>
+                </div>
+            </div>
         </>
     )
 }
