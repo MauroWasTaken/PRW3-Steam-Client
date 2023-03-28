@@ -42,7 +42,7 @@ export default function Navbar() {
                 }
                 {user !== null &&
                     <>
-                        <div style={{color: "white"}}>Welcome {user?.username}</div>
+                        <div className={"welcome-title"} style={{color: "white"}}>Welcome {user?.username}</div>
                         <Button icon="pi pi-user" className={"nav_button"} severity="warning" rounded
                                 aria-label="User" onClick={() => {
                                     window.location.href = '/profile'
