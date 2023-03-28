@@ -4,11 +4,13 @@ import Game from "../models/game";
 import User from "../models/user";
 import '/src/assets/style/wishlist.css'
 import UserApi from "../services/user_api";
+import { useNavigate } from "react-router-dom";
 
 const userApi = new UserApi();
 export default function WishlistButton({game, small, medium, applyFilter}: { game: Game, small?: boolean, medium?: boolean, applyFilter: any }) {
     const toast = useRef<Toast>(null);
     const [user, setUser] = useState<User | null>();
+    const navigate = useNavigate();
     const size = {
         small: {
             fontSize: "2em",
@@ -59,12 +61,7 @@ export default function WishlistButton({game, small, medium, applyFilter}: { gam
                 });
             });
         } else {
-            toast.current?.show({
-                severity: 'error',
-                summary: 'Error',
-                detail: 'Please login to add to wishlist',
-                life: 3000
-            });
+            navigate('/login');
         }
     }
 

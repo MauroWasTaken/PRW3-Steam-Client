@@ -4,11 +4,13 @@ import Game from "../models/game";
 import User from "../models/user";
 import '/src/assets/style/buybutton.css'
 import UserApi from "../services/user_api";
+import { useNavigate } from "react-router-dom";
 
 const userApi = new UserApi();
 export default function PurchaseButton({game}: { game: Game }) {
     const toast = useRef<Toast>(null);
     const [user, setUser] = useState<User | null>();
+    const navigate = useNavigate();
     const size = {
             fontSize: "3em",
             width: "75px",
@@ -46,12 +48,7 @@ export default function PurchaseButton({game}: { game: Game }) {
                 });
             }
         } else {
-            toast.current?.show({
-                severity: 'error',
-                summary: 'Error',
-                detail: 'Please login to add to wishlist',
-                life: 3000
-            });
+           navigate('/login');
         }
     }
 
@@ -63,11 +60,9 @@ export default function PurchaseButton({game}: { game: Game }) {
                      style={{
                          width: size.width ,
                          height: size.height 
-                     }}>
-                    {user !== null &&
-                        <i className={"pi pi-shopping-cart"}
-                           style={{fontSize: size.fontSize}}/>
-                    }
+                    }}>
+                    <i className={"pi pi-shopping-cart"}
+                        style={{fontSize: size.fontSize}}/>
                 </div>
             </a>
         </>
