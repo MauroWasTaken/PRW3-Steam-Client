@@ -17,19 +17,19 @@
 }
 .details .medias{
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 76px);
     flex-grow: 1;
     background-size:cover;
     background-position: center;
 }
 .details .reviews{
-    width: calc(50% - 2px - var(--universal-padding));
+    width: calc(50% - 2px - var(--universal-padding)*1.5);
     height: 50vh;
     color: white;
     flex-grow: 1;
     border: 1px solid var(--secondary-color-light);
     border-radius: 10px;
-    margin : var(--universal-padding) calc(var(--universal-padding)/2) 0 calc(var(--universal-padding)/2);
+    margin : var(--universal-padding) calc(var(--universal-padding)) var(--universal-padding) calc(var(--universal-padding)/2);
 }
 .details h1{
     font-size: 2rem;
@@ -43,11 +43,11 @@
     text-decoration-thickness: 2px;
 }
 .details .description{
-    width: calc(50% - 2px - var(--universal-padding));
+    width: calc(50% - 2px - var(--universal-padding)*1.5);
     color: white;
     border: 1px solid var(--secondary-color-light);
-    border-radius: var(--universal-border-radius);
-    margin : var(--universal-padding) calc(var(--universal-padding)/2) 0 calc(var(--universal-padding)/2);
+    border-radius: var(--universal-border-radius);   
+    margin : var(--universal-padding) calc(var(--universal-padding)/2) var(--universal-padding) calc(var(--universal-padding));
     border-radius: 10px;
 }
 .scrollable {
@@ -89,10 +89,12 @@
     .details .description{
         width: 100%;
         height: 40vh;
+        margin : var(--universal-padding) calc(var(--universal-padding)/2);
     }
     .details .reviews{
         width: 100%;
         height: 40vh;
+        margin : var(--universal-padding) calc(var(--universal-padding)/2);
     }
   }
 
