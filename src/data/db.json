@@ -159,7 +159,7 @@
       "title": "God Of War",
       "description": "Adventure game with dad and boy",
       "medias": "",
-      "splash": "https://cdn.akamai.steamstatic.com/steam/apps/1593500/capsule_616x353.jpg?t=1642526157",
+      "splash": "https://image.api.playstation.com/vulcan/img/rnd/202008/2617/gCLof29n2eeFxVRGpo90xW1A.jpg",
       "genresIds": [
         1,
         2,
@@ -169,10 +169,10 @@
     },
     {
       "id": 2,
-      "title": "Call of duty Modern Warfare (2019)",
+      "title": "Counter Strike Global Offensive",
       "description": "Fps",
       "medias": "",
-      "splash": "https://store-images.s-microsoft.com/image/apps.1926.68332208580498659.9222b095-8101-4531-b386-33547ee9944f.9fe84d5d-ef45-4807-98c3-d0978ab24399?q=90&w=480&h=270",
+      "splash": "https://prod.assets.earlygamecdn.com/images/csgo-2.jpg",
       "genresIds": [
         1,
         2,
@@ -209,7 +209,7 @@
       "title": "South Park: The Fractured But Whole",
       "description": "Choose the right difficulty",
       "medias": "",
-      "splash": "https://cdn.akamai.steamstatic.com/steam/apps/488790/capsule_616x353.jpg?t=1611670306",
+      "splash": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/s/south-park-the-fractured-but-whole-standard-edition-switch/hero",
       "genresIds": []
     },
     {
@@ -217,7 +217,7 @@
       "title": "Guilty Gear -Strive-",
       "description": "What happens when the gear is guilty?",
       "medias": "",
-      "splash": "https://cdn.akamai.steamstatic.com/steam/apps/1384160/capsule_616x353.jpg?t=1675667019",
+      "splash": "https://i0.wp.com/onemoregame.ph/wp-content/uploads/2021/02/Guilty-Gear-Strive-Open-Beta_20210213093954.jpg",
       "genresIds": [
         1,
         2,
@@ -230,7 +230,7 @@
       "title": "Fortnite",
       "description": "Building is for kids, this post was made by 0 build gang 🗿",
       "medias": "",
-      "splash": "https://www.trustedreviews.com/wp-content/uploads/sites/54/2021/12/19BR_BattlePass-920x518.jpg",
+      "splash": "https://cdn2.unrealengine.com/social-image-battlepass-3840x2160-19b42864f188.jpg",
       "genresIds": [
         1,
         8
@@ -253,7 +253,7 @@
       "title": "Rivals of Aether",
       "description": "the better smash bros",
       "medias": "",
-      "splash": "https://cdn.akamai.steamstatic.com/steam/apps/383980/capsule_616x353.jpg?t=1645643593",
+      "splash": "https://rivalsofaether.com/wp-content/uploads/2020/04/DefinitiveBanner@1080p.png",
       "genresIds": [
         1,
         11,
