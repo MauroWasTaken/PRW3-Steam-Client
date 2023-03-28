@@ -1,7 +1,8 @@
 .nav_title {
     color: white;
 }
-.nav_container{
+
+.nav_container {
     height: 75px;
     padding: 15px 15px;
     display: flex;
@@ -11,7 +12,7 @@
     border-bottom: 1px solid var(--secondary-color);
 }
 
-.nav_title i{
+.nav_title i {
     margin-right: 10px;
     font-weight: bold;
     color: var(--secondary-color);
@@ -23,9 +24,19 @@
 }
 
 .nav_title {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .nav_buttons .nav_button {
     margin-left: 15px;
+}
+
+.welcome-title {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome-title {
+        display: none;
+    }
 }
