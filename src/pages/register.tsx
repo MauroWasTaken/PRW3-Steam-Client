@@ -108,7 +108,7 @@ export default function Login() {
                                   onChange={(e) => formik.setFieldValue('confirmPassword', e.target.value)}
                                   feedback={false}/>
                         <Button label="Submit" type="submit" severity={"warning"}/>
-                        <a href={"/login"}>Déjà enregistrer ?</a>
+                        <a href={"/login"}>Already registered ?</a>
                     </form>
                 </div>
             </div>

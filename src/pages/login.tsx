@@ -82,7 +82,7 @@ export default function Login() {
                                   onChange={(e) => formik.setFieldValue('password', e.target.value)} feedback={false}/>
                         <Button label="Submit" type="submit" severity={"warning"}/>
                     </form>
-                    <a href={"/register"}>Pas encore de compte ?</a>
+                    <a href={"/register"}>No account yet ?</a>
                 </div>
             </div>
         </>
