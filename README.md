@@ -23,6 +23,8 @@ React
 
 VITE
 
+PrimeReact
+
 ## Functionality
 - Game search and filter
 - User authentication

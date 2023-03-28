@@ -1,0 +1,101 @@
+.details {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.details .title{
+    position: sticky;
+}
+.details .title h1{
+    color: white;
+    text-shadow: 0 0 5px #000000;
+    font-size: 3rem;
+    line-height: 1.5;
+    text-decoration: none;
+}
+.details .medias{
+    width: 100%;
+    height: calc(100vh - 76px);
+    flex-grow: 1;
+    background-size:cover;
+    background-position: center;
+}
+.details .reviews{
+    width: calc(50% - 2px - var(--universal-padding)*1.5);
+    height: 50vh;
+    color: white;
+    flex-grow: 1;
+    border: 1px solid var(--secondary-color-light);
+    border-radius: 10px;
+    margin : var(--universal-padding) calc(var(--universal-padding)) var(--universal-padding) calc(var(--universal-padding)/2);
+}
+.details h1{
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: auto;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+    padding-top: var(--universal-padding);
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-color);
+    text-decoration-thickness: 2px;
+}
+.details .description{
+    width: calc(50% - 2px - var(--universal-padding)*1.5);
+    color: white;
+    border: 1px solid var(--secondary-color-light);
+    border-radius: var(--universal-border-radius);   
+    margin : var(--universal-padding) calc(var(--universal-padding)/2) var(--universal-padding) calc(var(--universal-padding));
+    border-radius: 10px;
+}
+.scrollable {
+    overflow-y: auto;
+    max-height: calc(100% - 3rem - 15px);
+}
+.scrollable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: var(--main-color);
+}
+
+.scrollable::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: var(--main-color);
+}
+
+.scrollable::-webkit-scrollbar-thumb
+{
+	background-color: var(--secondary-color);
+}
+.details .description p{
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-left: var(--universal-padding);
+    padding-right: var(--universal-padding);
+}
+.buttons{
+    z-index: 10;
+    purchase:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .details .description{
+        width: 100%;
+        height: 40vh;
+        margin : var(--universal-padding) calc(var(--universal-padding)/2);
+    }
+    .details .reviews{
+        width: 100%;
+        height: 40vh;
+        margin : var(--universal-padding) calc(var(--universal-padding)/2);
+    }
+  }
+
+

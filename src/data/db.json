@@ -1,0 +1,348 @@
+{
+  "genres": [
+    {
+      "id": 1,
+      "name": "Action"
+    },
+    {
+      "id": 2,
+      "name": "Adventure"
+    },
+    {
+      "id": 3,
+      "name": "Racing"
+    },
+    {
+      "id": 4,
+      "name": "Role-Playing"
+    },
+    {
+      "id": 5,
+      "name": "Simulation"
+    },
+    {
+      "id": 6,
+      "name": "Strategy"
+    },
+    {
+      "id": 7,
+      "name": "Sports"
+    },
+    {
+      "id": 8,
+      "name": "Shooter"
+    },
+    {
+      "id": 9,
+      "name": "Puzzle"
+    },
+    {
+      "id": 10,
+      "name": "Platformer"
+    },
+    {
+      "id": 11,
+      "name": "Fighting"
+    },
+    {
+      "id": 12,
+      "name": "Music"
+    },
+    {
+      "id": 13,
+      "name": "Educational"
+    },
+    {
+      "id": 14,
+      "name": "Board Game"
+    },
+    {
+      "id": 15,
+      "name": "Card Game"
+    },
+    {
+      "id": 16,
+      "name": "Trivia"
+    },
+    {
+      "id": 17,
+      "name": "Casual"
+    },
+    {
+      "id": 18,
+      "name": "Arcade"
+    },
+    {
+      "id": 19,
+      "name": "Family"
+    },
+    {
+      "id": 20,
+      "name": "Party"
+    },
+    {
+      "id": 21,
+      "name": "MMO"
+    },
+    {
+      "id": 22,
+      "name": "Indie"
+    },
+    {
+      "id": 23,
+      "name": "Massively Multiplayer"
+    },
+    {
+      "id": 24,
+      "name": "Retro"
+    },
+    {
+      "id": 25,
+      "name": "Classic"
+    },
+    {
+      "id": 26,
+      "name": "Turn-Based"
+    },
+    {
+      "id": 27,
+      "name": "Real-Time"
+    },
+    {
+      "id": 28,
+      "name": "Singleplayer"
+    },
+    {
+      "id": 29,
+      "name": "Multiplayer"
+    },
+    {
+      "id": 30,
+      "name": "Co-op"
+    },
+    {
+      "id": 31,
+      "name": "Competitive"
+    },
+    {
+      "id": 32,
+      "name": "First-Person"
+    },
+    {
+      "id": 33,
+      "name": "Third-Person"
+    },
+    {
+      "id": 34,
+      "name": "Top-Down"
+    },
+    {
+      "id": 35,
+      "name": "Side-Scrolling"
+    },
+    {
+      "id": 36,
+      "name": "Isometric"
+    },
+    {
+      "id": 37,
+      "name": "2D"
+    },
+    {
+      "id": 38,
+      "name": "3D"
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "title": "God Of War",
+      "description": "Adventure game with dad and boy",
+      "medias": "",
+      "splash": "https://image.api.playstation.com/vulcan/img/rnd/202008/2617/gCLof29n2eeFxVRGpo90xW1A.jpg",
+      "genresIds": [
+        1,
+        2,
+        28,
+        38
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Counter Strike Global Offensive",
+      "description": "Fps",
+      "medias": "",
+      "splash": "https://prod.assets.earlygamecdn.com/images/csgo-2.jpg",
+      "genresIds": [
+        1,
+        2,
+        28,
+        38
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Mario Kart 8 Deluxe",
+      "description": "Racing game with Mario and friends",
+      "medias": "",
+      "splash": "https://assets.reedpopcdn.com/mario-kart-8-deluxe-dlc-release-time-9016-1647514624847.jpg/BROK/thumbnail/1600x900/quality/100/mario-kart-8-deluxe-dlc-release-time-9016-1647514624847.jpg",
+      "genresIds": []
+    },
+    {
+      "id": 4,
+      "title": "CyberPunk 2077",
+      "description": "One of the games of all time",
+      "medias": "",
+      "splash": "https://i0.wp.com/insider-gaming.com/wp-content/uploads/2022/12/cyberpunk-2077-game-of-the-year-edition-scaled-e1670012903149.jpg?fit=1920%2C1080&ssl=1",
+      "genresIds": []
+    },
+    {
+      "id": 5,
+      "title": "Minecraft",
+      "description": "A game where you mine and craft",
+      "medias": "",
+      "splash": "https://i0.wp.com/news.xbox.com/en-us/wp-content/uploads/sites/2/2021/10/Minecraft_PC_Bundle_XboxClub_1920x1080.png?fit=1920%2C1080&ssl=1",
+      "genresIds": []
+    },
+    {
+      "id": 6,
+      "title": "South Park: The Fractured But Whole",
+      "description": "Choose the right difficulty",
+      "medias": "",
+      "splash": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/s/south-park-the-fractured-but-whole-standard-edition-switch/hero",
+      "genresIds": []
+    },
+    {
+      "id": 7,
+      "title": "Guilty Gear -Strive-",
+      "description": "What happens when the gear is guilty?",
+      "medias": "",
+      "splash": "https://i0.wp.com/onemoregame.ph/wp-content/uploads/2021/02/Guilty-Gear-Strive-Open-Beta_20210213093954.jpg",
+      "genresIds": [
+        1,
+        2,
+        29,
+        11
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Fortnite",
+      "description": "Building is for kids, this post was made by 0 build gang 🗿",
+      "medias": "",
+      "splash": "https://cdn2.unrealengine.com/social-image-battlepass-3840x2160-19b42864f188.jpg",
+      "genresIds": [
+        1,
+        8
+      ]
+    },
+    {
+      "id": 9,
+      "title": "League of Legends",
+      "description": "We never end on a loss 💪",
+      "medias": "",
+      "splash": "https://s.yimg.com/uu/api/res/1.2/dEzGhndCHaLCnUMD_zBcxw--~B/aD0xMTU4O3c9MTgwMDthcHBpZD15dGFjaHlvbg--/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2021-01/cdcf03a0-4e92-11eb-afdf-ffae59fc8055.cf.jpg",
+      "genresIds": [
+        6,
+        30,
+        34
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Rivals of Aether",
+      "description": "the better smash bros",
+      "medias": "",
+      "splash": "https://rivalsofaether.com/wp-content/uploads/2020/04/DefinitiveBanner@1080p.png",
+      "genresIds": [
+        1,
+        11,
+        29
+      ]
+    }
+  ],
+  "users": [
+    {
+      "email": "mathieu.rabot@gaea21.org",
+      "password": "$2a$10$VbRSFPeV.C0TxZrUcdx5W.w7hNHX8c8XMzN46ID5RnegZ4AeUPjky",
+      "username": "Nomeos",
+      "wishlist": [
+        1,
+        2,
+        9,
+        5
+      ],
+      "library": [],
+      "id": 1
+    },
+    {
+      "email": "mauro@mail.com",
+      "password": "$2a$10$KcgDhFUbyd3yavE2TxtON.0aEDlPGn3fHhDHmaB7dooei8RRTktyK",
+      "username": "Mauro",
+      "wishlist": [
+        2,
+        1
+      ],
+      "library": [
+        1,
+        2,
+        3,
+        7,
+        8,
+        4
+      ],
+      "id": 2
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "gameId": 7,
+      "userId": 2,
+      "rating": 5,
+      "comment": "This game is amazing, I love it"
+    },
+    {
+      "id": 2,
+      "gameId": 9,
+      "userId": 2,
+      "rating": 0.5,
+      "comment": "IM GOING TO MURDER MY TEAM"
+    },
+    {
+      "id": 3,
+      "gameId": 9,
+      "userId": 1,
+      "rating": 2,
+      "comment": "This game is trash, I hate it"
+    },
+    {
+      "id": 4,
+      "gameId": 9,
+      "userId": 2,
+      "rating": 0.5,
+      "comment": "IM GOING TO MURDER MY TEAM"
+    },
+    {
+      "id": 5,
+      "gameId": 9,
+      "userId": 1,
+      "rating": 2,
+      "comment": "This game is trash, I hate it"
+    },
+    {
+      "id": 6,
+      "gameId": 9,
+      "userId": 1,
+      "rating": 2,
+      "comment": "This game is trash, I hate it"
+    },
+    {
+      "id": 7,
+      "gameId": 9,
+      "userId": 2,
+      "rating": 0.5,
+      "comment": "IM GOING TO MURDER MY TEAM"
+    }
+  ]
+}

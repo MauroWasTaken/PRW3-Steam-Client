@@ -1,0 +1,66 @@
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 388px;
+    height: 219px;
+    background-color: #2d2d2d;
+    margin: 10px 6px;
+    overflow-wrap: break-word;
+    position: relative;
+    overflow: hidden;
+}
+
+.game .image {
+    width: inherit;
+    height: inherit;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.game .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.game:hover .image {
+    opacity: 0.5;
+    cursor: pointer;
+    filter: blur(8px);
+}
+
+.game:hover .title {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.game:hover .wishlist {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.game .title {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    transition: all 0.5s ease;
+}
+
+.game .title h2 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 300;
+    padding: 0;
+    text-align: center;
+    line-height: 1;
+}

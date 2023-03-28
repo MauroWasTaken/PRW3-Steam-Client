@@ -1,0 +1,42 @@
+.nav_title {
+    color: white;
+}
+
+.nav_container {
+    height: 75px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color-dark);
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.nav_title i {
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.nav_container > * {
+    display: flex;
+    align-items: center;
+}
+
+.nav_title {
+    text-decoration: none;
+}
+
+.nav_buttons .nav_button {
+    margin-left: 15px;
+}
+
+.welcome-title {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome-title {
+        display: none;
+    }
+}

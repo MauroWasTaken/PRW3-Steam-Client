@@ -5,17 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "backend": "json-server-auth --watch src/data/db.json --port 8493",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "formik": "^2.2.9",
+    "primeicons": "^6.0.1",
+    "primereact": "^9.2.0",
     "react": "^18.2.0",
+    "react-alice-carousel": "^2.7.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "json-server": "^0.17.3",
+    "json-server-auth": "^2.1.0",
+    "react-router-dom": "^6.8.1",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
   }

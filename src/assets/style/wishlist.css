@@ -1,0 +1,42 @@
+.games .wishlist{
+    opacity: 0;
+}
+
+.wishlist {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2d2d2d;
+    border: 2px solid #EA9010;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    z-index: 2;
+}
+
+.wishlist i {
+    color: #EA9010;
+    transition: all 0.5s ease;
+}
+
+.wishlist:hover i {
+    color: #2d2d2d;
+}
+
+.wishlist:hover {
+    background-color: #EA9010;
+}
+
+.small {
+    font-size: 2em;
+}
+
+.medium {
+    font-size: 3em;
+}
