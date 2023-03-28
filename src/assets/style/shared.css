@@ -10,6 +10,11 @@
     --full-star-color: #ffffff;
     --empty-star-color: #777777;
 }
+body {
+    background-color: var(--main-color);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
 body::-webkit-scrollbar-track
 {
 	background-color: var(--main-color);

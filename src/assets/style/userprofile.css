@@ -6,7 +6,7 @@
 }
 .profile .scrollable {
     overflow-y: auto;
-    max-height: calc(100% - 3rem - 15px);
+    max-height: calc(50% - 3rem - 15px);
 }
 .userGames .wishlist{
     display: none;
@@ -25,7 +25,8 @@
 }
 .profile .games{
     justify-content: left;
-    padding: 0 var(--universal-padding) 0 var(--universal-padding);
+    margin: 0 auto 0 auto; 
+    max-width: calc(4 * 388px + 8 * 6px);
     
 }
 .scrollable h2{

@@ -55,7 +55,7 @@ export default function UserProfile() {
                 </div>
                 <div className={"reviews"}>
                     <h2 className={"review title"}>Reviews</h2>
-                        <div className={"scroolable"}>
+                        <div className={"scrollable"}>
                             {reviews.length === 0 && <h2>Loading...</h2>}
                             {reviews[0] === null && <h2>No Reviews</h2>}
                             { (reviews[0] !== null && reviews.length > 0) && reviews.map((review: any) => (

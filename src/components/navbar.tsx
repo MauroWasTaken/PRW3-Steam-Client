@@ -21,6 +21,8 @@ export default function Navbar() {
     return (
         <div className={"nav_container"}>
             <a className={"nav_title"} href='/'>
+            <i className={"pi pi-power-off"}
+                        style={{fontSize: 30}}/>
                 <h1>GameShelf</h1>
             </a>
             <div className={"nav_buttons"}>

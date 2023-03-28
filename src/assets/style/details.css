@@ -23,12 +23,13 @@
     background-position: center;
 }
 .details .reviews{
-    width: calc(50% - 2px);
+    width: calc(50% - 2px - var(--universal-padding));
     height: 50vh;
     color: white;
     flex-grow: 1;
     border: 1px solid var(--secondary-color-light);
     border-radius: 10px;
+    margin : var(--universal-padding) calc(var(--universal-padding)/2) 0 calc(var(--universal-padding)/2);
 }
 .details h1{
     font-size: 2rem;
@@ -42,10 +43,11 @@
     text-decoration-thickness: 2px;
 }
 .details .description{
-    width: calc(50% - 2px);
+    width: calc(50% - 2px - var(--universal-padding));
     color: white;
     border: 1px solid var(--secondary-color-light);
     border-radius: var(--universal-border-radius);
+    margin : var(--universal-padding) calc(var(--universal-padding)/2) 0 calc(var(--universal-padding)/2);
     border-radius: 10px;
 }
 .scrollable {
@@ -76,6 +78,11 @@
 }
 .buttons{
     z-index: 10;
+    purchase:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 @media only screen and (max-width: 600px) {
