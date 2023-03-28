@@ -7,8 +7,13 @@ export default function WishlistFilter({content, updateWishlistFilter}: { conten
     const [checked, setChecked] = useState(false);
 
     function onChange(e: any) {
-        setChecked(e.checked);
-        updateWishlistFilter(e.checked);
+        const user = sessionStorage.getItem('user');
+        if (user === null) {
+            window.location.href = '/login';
+        } else {
+            setChecked(e.checked);
+            updateWishlistFilter(e.checked);
+        }
     }
 
     useEffect(() => {
