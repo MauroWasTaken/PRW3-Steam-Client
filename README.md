@@ -1,4 +1,4 @@
-# PRW3-Game-Client
+# PRW3-GameShelf
 
 (Previously known as PRW3-Steam-Client)
 
