@@ -1,34 +1,49 @@
-# PRW3-Steam-Client
+# PRW3-Game-Client
+
+(Previously known as PRW3-Steam-Client)
+
 ## Introduction
 
-This project is a Steam client designed to bring the information from the gaming platform Steam. Built using the React JavaScript library and VITE, the client will provide features such as user authentication, game library display, detailed game information, user reviews and ratings.
+This project is a custom game client designed to be an alternative to other clients like Steam or  the EpicGamesStore. Built using the React JavaScript library and VITE, the client will provide features such as user authentication, game library display, detailed game information, user reviews and ratings.
 ## Project setup
 
-Install dependencies
+### Environment variables
 
-```
+Copy the `.env.example` file to `.env` and fill in the values. 
+
+- `VITE_BACKEND_URL` is the URL of the backend API
+
+### Install dependencies
+
+```bash
 npm install
 ```
 
-run the project
+### run the project
 
-```
+```bash
 npm run dev
 ```
 
-## Technology
+### run the backend
+
+```bash
+npm run backend
+```
+## Technologies
 NodeJs
 
 React
 
 VITE
 
-PrimeReact
+PrimeReact 
 
 ## Functionality
 - Game search and filter
 - User authentication
 - Game library display
+- Wishlist display
 - Game detail view with description and videos
 - User reviews and ratings
 
